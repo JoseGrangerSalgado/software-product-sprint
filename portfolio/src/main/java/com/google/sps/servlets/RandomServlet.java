@@ -11,20 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random")
 public class RandomServlet extends HttpServlet {
     
-  private String[] mess = {"He cooks a mean cereal - My Brother", "He is okay, I guess - My Bestfriend", "He can turn on my Netflix, basically a genius - My Mom", "He feeds me - My Dog", "He is the apex human - Elon Musk(probably)"};
+  private String[] msg = {"He cooks a mean cereal - My Brother", "He is okay, I guess - My Bestfriend",
+  "He can turn on my Netflix, basically a genius - My Mom",
+  "He feeds me - My Dog", "He is the apex human - Elon Musk(probably)"};
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     
-    String json = convertToJsonUsingGson(mess);
+    String json = convertToJsonUsingGson(msg);
     response.setContentType("application/json;");
     response.getWriter().println(json);
 
   }
 
-  private String convertToJsonUsingGson(String[] mess) {
+  private String convertToJsonUsingGson(String[] msg) {
     Gson gson = new Gson();
-    String json = gson.toJson(mess);
+    String json = gson.toJson(msg);
     return json;
   }
 }
