@@ -1,183 +1,222 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     height: 100%;
     overflow: hidden;
-    margin: 0px; 
+    margin: 0px;
     width: 100%;
-
 }
+
 body::-webkit-scrollbar {
-    width: 12px;               
-}
-body::-webkit-scrollbar-track {
-    background: grey;       
-}
-body::-webkit-scrollbar-thumb {
-    background-color: black;    
-    border-radius: 20px;       
-    border: 3px solid grey;  
+    width: 12px;
 }
 
-.Intro{
+body::-webkit-scrollbar-track {
+    background: grey;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 3px solid grey;
+}
+
+::placeholder {
+    color: white;
+}
+
+.intro {
     height: calc(100vh - 8em);
     padding: 4em;
     background: url(../Images/main-background.gif) no-repeat center center fixed;
     background-size: cover;
-    text-shadow:
-        0.07em 0 black,
-        0 0.07em black,
-        -0.07em 0 black,
-        0 -0.07em black;
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
     color: white;
     transition: 2s;
-    font-family: 'Anonymous Pro', monospace; 
+    font-family: 'Anonymous Pro', monospace;
 }
-    #navigationbar{
-        opacity: 0;
-        display:flex;
-        flex-direction: row;
-        width: 180vh;
-        height: 10vh;
-        transition: 2s;
-        position: fixed;
-        justify-content: space-between;
-    }
 
-    .Intro  #playbutton2{
-        align-items:flex-end;
-        border: none;
-        height: 60px;
-        width: 60px;
-        background-size: contain;
-        background-color: transparent;
-        animation: display 2s normal 5.5s forwards;
+#navigation-bar {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    width: 91vw;
+    height: 10vh;
+    transition: 2s;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.intro #play-button2 {
+    align-items: flex-end;
+    border: none;
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    background-color: transparent;
+    animation: display 2s normal 5.5s forwards;
+    opacity: 1;
+    outline: none;
+    transition: 0.5s;
+    background-image: url(../Images/play.png);
+    cursor: pointer;
+}
+
+#navigation-bar #menu img {
+    align-items: flex-start;
+    width: 40px;
+    height: 40px;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+.line-1 {
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-size: 50px;
+}
+
+.line-2 {
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.anim-typewriter-1 {
+    animation: typewriter-1 2s steps(44) 1s 1 normal both, blinkTextCursor-1 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter-1 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12.5em;
+        border-right-width: 0;
+    }
+}
+
+@keyframes blinkTextCursor-1 {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.anim-typewriter-2 {
+    animation: typewriter-2 2s steps(44) 3.5s 1 normal both, blinkTextCursor-2 500ms steps(44) 3s infinite normal;
+}
+
+@keyframes typewriter-2 {
+    from {
+        width: 0;
+        border-width: 0px
+    }
+    to {
+        width: 18em;
+    }
+}
+
+@keyframes blinkTextCursor-2 {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.intro #mustex {
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+.intro #play-button1 {
+    border: none;
+    height: 70px;
+    width: 70px;
+    display: block;
+    margin: auto;
+    background-size: contain;
+    background-color: transparent;
+    animation: display 2s normal 5.5s forwards;
+    opacity: 0;
+    outline: none;
+    transition: 0.5s;
+    background-image: url(../Images/play.png);
+    cursor: pointer;
+}
+
+@keyframes display {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
-        outline: none;
-        transition: 0.5s;
-        background-image: url(../Images/play.png);
-        cursor: pointer;
     }
-        #navigationbar #menu img{
-            align-items: flex-start;
-            width: 40px;
-            height: 40px;
-            margin-top: 1vh;
-            cursor: pointer;
-            }
-    .line-1{
-        position: relative;
-        top: 50%;  
-        width: 24em;
-        margin: 0 auto;
-        border-right: 2px solid rgba(255,255,255,.75);
-        font-size: 180%;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        transform: translateY(-50%);
-        font-size: 50px;    
-    }
-    .line-2{
-        position: relative;
-        top: 50%;  
-        width: 24em;
-        margin: 0 auto;
-        border-right: 2px solid rgba(255,255,255,.75);
-        font-size: 180%;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        transform: translateY(-50%);     
-    }
-    .anim-typewriter-1{
-        animation: typewriter-1 2s steps(44) 1s 1 normal both,
-                blinkTextCursor-1 500ms steps(44) infinite normal;
-    }
-        @keyframes typewriter-1{
-            from{width: 0;}
-            to{width: 12.5em; border-right-width: 0;}
-        }
-        @keyframes blinkTextCursor-1{
-            from{border-right-color: rgba(255,255,255,.75);}
-            to{border-right-color: transparent;}
-        }
-    .anim-typewriter-2{
-        animation: typewriter-2 2s steps(44) 3.5s 1 normal both,
-                blinkTextCursor-2 500ms steps(44) 3s infinite normal;
-    }
-        @keyframes typewriter-2{
-            from{width: 0; border-width: 0px}
-            to{width: 18em;}
-        }
-        @keyframes blinkTextCursor-2{
-            from{border-right-color: rgba(255,255,255,.75);}
-            to{border-right-color: transparent;}
-        }
-    .Intro #mustex{
-        text-align: center;
-        margin: 0; 
-        opacity: 0; 
-        transition: 1s;
-    }
+}
 
-    .Intro  #playbutton1{
-        border: none;
-        height: 70px;
-        width: 70px;
-        display: block;
-        margin: auto;
-        background-size: contain;
-        background-color: transparent;
-        animation: display 2s normal 5.5s forwards;
-        opacity: 0;
-        outline: none;
-        transition: 0.5s;
-        background-image: url(../Images/play.png);
-        cursor: pointer;
-    }
+#play-button1:hover~#mustex {
+    opacity: 1;
+}
 
-        @keyframes display{
-            from{opacity:0;}
-            to{opacity:1;}
-        }
-        #playbutton1:hover ~ #mustex{
-            opacity: 1;
+.intro #enter-button {
+    border: 3px solid white;
+    display: flex;
+    margin: auto;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    animation: display 2s normal 6.5s forwards;
+    opacity: 0;
+    margin-top: 8%;
+    font-size: 30px;
+    transition: all 2s;
+    font-family: 'Anonymous Pro', monospace;
+    cursor: pointer;
+}
 
-        }
-    .Intro #enterbutton{
-        border: 3px solid white;
-        display: flex;
-        margin: auto;
-        background-color: transparent;
-        color: white;
-        outline: none;
-        animation:display 2s normal 6.5s forwards;
-        opacity: 0;
-        margin-top: 8%;
-        font-size: 30px;
-        transition: all 2s;
-        font-family: 'Anonymous Pro', monospace; 
-        cursor: pointer;
-    }
-        #enterbutton:hover{
-            font-size: 60px;
-            
-        }
-        #scroll{
-            text-align: center;
-            margin-top: 45vh;
-            opacity: 0;
-            transition: 5s;
-            cursor: pointer;
-        }
+#enter-button:hover {
+    font-size: 60px;
+}
 
+#scroll {
+    opacity: 0;
+    transition: 5s;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
 
-.Aboutme{
+.about-me {
     margin: 0px;
-    background-color:rgb(48,48,48);
+    background-color: rgb(48, 48, 48);
     color: white;
     height: 100%;
     font-family: 'Ubuntu', sans-serif;
@@ -185,38 +224,35 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
-    #who{
-        font-size: 250%;
-        text-align: center;
-        padding: 30px;
-    }
+#who {
+    font-size: 250%;
+    text-align: center;
+    padding: 30px;
+}
 
-    #inwho{
-       
-        font-size: 150%;
-        padding: 5%;
-        padding-top: 5px;
-        justify-content: center;
-    }
+#in-who {
+    font-size: 150%;
+    padding: 5%;
+    padding-top: 5px;
+    justify-content: center;
+}
 
-    #endwho{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5%;
-        font-size: 150%;
-    }
+#end-who {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    font-size: 150%;
+}
 
+#tec:hover {
+    transition: 1.5s;
+    background-color: black;
+}
 
-        #tec:hover{
-            transition: 1.5s;
-            background-color: black;
-        }
-
-.Project{
-
+.project {
     background: url(../Images/back1.gif) no-repeat center center fixed;
-    background-size:cover;
+    background-size: cover;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -226,80 +262,66 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     justify-content: center;
     overflow: hidden;
-
 }
 
-    #proi{
-        font-size: 250%;
-        text-align: center;
-        padding: 30px;
-        flex-basis: 100%;
-        text-shadow:
-            0.07em 0 black,
-            0 0.07em black,
-            -0.07em 0 black,
-            0 -0.07em black;
-        color: white;
-    }
+#proi {
+    font-size: 250%;
+    text-align: center;
+    padding: 30px;
+    flex-basis: 100%;
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+    color: white;
+}
 
-    .Card{
+.card {
+    box-shadow: 0 4px 8px 0 black;
+    background-color: whitesmoke;
+    margin: 3vh;
+    border-radius: 5%;
+    color: black;
+    width: 356px;
+    height: 357px;
+    text-align: center;
+    text-justify: center;
+    padding: 1vh;
+}
 
-        box-shadow: 0 4px 8px 0 black;
-        background-color: whitesmoke;
-        margin: 3vh;
-        border-radius: 5%;
-        color: black;
-        width: 356px;
-        height: 357px;
-        text-align: center;
-        text-justify: center;
-        padding: 1vh;
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+}
 
-        
-    }
-        .Card img{
-            
-            width: 150px;
-            height: 150px;
-            border-radius: 5%;
-    
-        }
-        
-        .Card #git{
+.card #git {
+    color: lightslategray;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
-            color:lightslategray;
-            text-decoration: underline;
-            cursor: pointer;
+#git-hub {
+    flex-basis: 100%;
+    text-align: center;
+}
 
-        }
+#git-hub img {
+    width: 30%;
+    height: 30%;
+    cursor: pointer;
+}
 
-    #github{
-        flex-basis:100%;
-        text-align: center;
-    }
-        #github img{
-            width: 30%;
-            height: 30%;
-            cursor: pointer;
-        }
-        #github p{
-            text-shadow:
-            0.07em 0 black,
-            0 0.07em black,
-            -0.07em 0 black,
-            0 -0.07em black;
-            color: white;
-            font-size: 130%;
-        
-        }
+#git-hub p {
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+    color: white;
+    font-size: 130%;
+}
 
-hr{
+hr {
     width: 60%;
     border-width: 0.3px;
-    border-color:whitesmoke;
+    border-color: whitesmoke;
 }
-.Skills{
 
+#skills {
     background: url(../Images/back2.jpg);
     background-size: cover;
     width: 100%;
@@ -307,143 +329,158 @@ hr{
     color: white;
     font-family: 'Ubuntu', sans-serif;
     overflow: hidden;
-
-
 }
 
-    #prod{
-        font-size: 250%;
-        text-align: left;
-        flex-basis: 100%;
-        color: white;
-        padding-left: 32vh;
-        padding-top: 20px;
-    }
-    
+#prod {
+    font-size: 250%;
+    text-align: left;
+    flex-basis: 100%;
+    color: white;
+    padding-left: 32vh;
+    padding-top: 20px;
+}
 
-    #Frontend{
-    
-        width: 100%;
-        height: 20%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content:space-evenly;
-        padding:30px;
-    
-
-    }
-
-    #Main-Languages{
-    
-        width: 100%;
-        height: 20%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: space-evenly;
-        padding:30px;
-
-    }
-
-    #Secondary-Languages{
-    
-        width: 100%;
-        height: 20%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: space-evenly;
-        padding:30px;
-
-    }
-
-    #Databases{
-    
-        width: 100%;
-        height: 20%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: space-evenly;
-        padding:30px;
-
-    }
-
-    #Tools{
-    
-        width: 100%;
-        height: 20%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: space-evenly;
-        padding:30px;
-
-    }
-    .Skills img{
-
-        width: 100px;
-        height: 100px;
-        border-radius: 5%;
-        transition: 1s;
-
-    }
-    .Skills img:hover{
-        
-        background-color: grey;
-        width: 120px;
-        height: 120px;
-
-    }
-
-
-.Contact{
-
-    background-color:black;
+#front-end {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
 }
 
-    .Contact button{
-        
-        background-color: transparent;
-        color: white;
-        margin: 50px;
-        font-size: 200%;
-        cursor: pointer;
-        box-shadow: 0 4px 8px 0 black;
-        border-radius: 8%;
-        padding: 20px;
-        outline: none;
-        font-family: 'Ubuntu', sans-serif;
-        border: 4px groove grey;
-        transition: 1s;
-        
+#main-languages {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
 
-    }
+#secondary-languages {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
 
-        .Contact button:hover{
-            
-            padding:30px;
-            border-radius: 0%;
-            background-color: rgb(48,48,48);
-            
+#databases {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
 
-        }
+#tools {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
 
+#skills img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+    transition: 1s;
+}
+
+#skills img:hover {
+    background-color: grey;
+    width: 120px;
+    height: 120px;
+}
+
+.contact {
+    background-color: black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.contact button {
+    background-color: transparent;
+    color: white;
+    margin: 50px;
+    font-size: 200%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 black;
+    border-radius: 4%;
+    padding: 20px;
+    outline: none;
+    border: 4px solid grey;
+    transition: 1s;
+    margin-bottom: 5px;
+}
+
+.contact button:hover {
+    padding: 20px;
+    border-radius: 0%;
+    background-color: rgb(48, 48, 48);
+}
+
+#message {
+    color: white;
+    font-size: 150%;
+}
+
+#my-form textarea {
+    width: 800px;
+    height: 150px;
+    background-color: grey;
+    color: white;
+    font-size: 200%;
+}
+
+#submit-button {
+    background-color: transparent;
+    color: white;
+    margin: 50px;
+    font-size: 200%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 black;
+    border-radius: 4%;
+    padding: 20px;
+    outline: none;
+    border: 4px solid grey;
+    transition: 1s;
+    margin-bottom: 5px;
+}
+
+#submit-button:hover {
+    padding: 20px;
+    border-radius: 0%;
+    background-color: rgb(48, 48, 48);
+}
 
 .slideshow-container {
     width: 50%;
     position: relative;
     margin: auto;
 }
-  
-.prev, .next {
+
+.myslides {
+    display: none;
+}
+
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -462,12 +499,12 @@ hr{
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-  
-  
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
-  
+
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -477,17 +514,17 @@ hr{
     width: 100%;
     text-align: center;
 }
-  
-.numbertext {
+
+.number-text {
     color: #f2f2f2;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
 }
-  
+
 .dot {
-    cursor:pointer;
+    cursor: pointer;
     height: 13px;
     width: 13px;
     margin: 0 2px;
@@ -496,149 +533,168 @@ hr{
     display: inline-block;
     transition: background-color 0.6s ease;
 }
-  
-.active, .dot:hover {
+
+.active,
+.dot:hover {
     background-color: #717171;
 }
-  
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
 }
-  
+
 @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-  
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
 
 .overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-y: hidden;
-  transition: 0.5s;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
 }
 
 .overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+.overlay p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 100px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay p:hover,
+.overlay p:focus {
+    color: #f1f1f1;
 }
 
 .overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
 }
 
 @media screen and (max-height: 450px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
+    .overlay {
+        overflow-y: auto;
+    }
+    .overlay a {
+        font-size: 20px
+    }
     .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-}
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
-.loader-wrapper{
-
-    width:100%;
-    height:100%;
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     background-color: #242f3f;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  animation: loader 2s infinite ease;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
 }
 
 .loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
 }
 
 @keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  
-  25% {
-    transform: rotate(180deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
-  
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes loader-inner {
-  0% {
-    height: 0%;
-  }
-  
-  25% {
-    height: 0%;
-  }
-  
-  50% {
-    height: 100%;
-  }
-  
-  75% {
-    height: 100%;
-  }
-  
-  100% {
-    height: 0%;
-  }
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
 }
