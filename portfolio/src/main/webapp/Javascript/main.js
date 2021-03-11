@@ -25,6 +25,11 @@ var scroll = document.getElementById("scroll")
 var testbutton = document.getElementById("test-button")
 var body = document.getElementsByTagName("body")[0]
 var messageElement = document.getElementById("message")
+var star = document.getElementById("star")
+var twinkle = document.getElementById("twinkle")
+var cloud = document.getElementById("cloud")
+var cenimg = document.getElementById("centimg")
+
 
 async function randomMessage() {
 
@@ -57,12 +62,17 @@ function realPage() {
     typewriter.style.transition = "1s";
     typewriter.style.opacity = "0";
     nav.style.opacity = "1";
+    star.style.opacity = "1";   
+    twinkle.style.opacity = "1";
+    cenimg.style.opacity = "1";
+    cloud.style.opacity = "1";
     scroll.style.opacity = "1";
     enterbutton.style.display = "none";
     mustex.style.display = "none";
-    intro.style.background = "url(../Images/img-2.gif) no-repeat center";
     body.style.backgroundColor = "black";
     body.style.overflow = "visible"
+
+    
 }
 
 
@@ -107,4 +117,24 @@ function closeNav() {
 
 function closeNav2() {
     document.getElementById("my-nav2").style.height = "0%";
+}
+
+function loadTasks() {
+    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
+      const taskListElement = document.getElementById('task-list');
+      tasks.forEach((task) => {
+        taskListElement.appendChild(createTaskElement(task));
+      })
+    });
+}
+
+function createTaskElement(task) {
+    const taskElement = document.createElement('li');
+    taskElement.className = 'task';
+  
+    const titleElement = document.createElement('span');
+    titleElement.innerText = task.title;
+  
+    taskElement.appendChild(titleElement);
+    return taskElement;
 }
