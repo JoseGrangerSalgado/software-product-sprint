@@ -7,6 +7,17 @@ $("#my-form").submit(function (e) {
   });
 });
 
+$("#my-form2").submit(function (e) {
+  e.preventDefault();
+  $.ajax({
+    url: "/new-task",
+    type: "post",
+    data: $("#my-form2").serialize(),
+  }).done(function () {
+    loadLast();
+  });
+});
+
 $(window).on("load", function () {
   $(".loader-wrapper").fadeOut("slow");
 });
@@ -135,4 +146,14 @@ function createTaskElement(task) {
 
   taskElement.appendChild(titleElement);
   return taskElement;
+}
+
+function loadLast() {
+  fetch("/list-tasks")
+    .then((response) => response.json())
+    .then((tasks) => {
+      const taskListElement = document.getElementById("task-list");
+      const ltask = tasks[Object.keys(tasks).shift()];
+      taskListElement.appendChild(createTaskElement(ltask));
+    });
 }
