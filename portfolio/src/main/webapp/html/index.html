@@ -259,7 +259,7 @@
     <hr>
     <form id=my-form action="/form-handler" method="POST">
       <p id=proi data-aos="fade-down">Send me a message:</p>
-      <textarea name="text-input" placeholder="Write your message:" data-aos="fade-right"></textarea>
+      <textarea id=txt name="text-input" placeholder="Write your message:" data-aos="fade-right"></textarea>
       <br>
       <input id=submit-button type="submit" onclick="openNav2()" data-aos="fade-down" />
     </form>
@@ -267,9 +267,9 @@
     <hr>
     <p id=proi data-aos="fade-down">Post a message on the website:</p>
     <form id=my-form2>
-      <textarea name="title" placeholder="Write your message:" maxlength = "200" data-aos="fade-left"></textarea>
+      <textarea id=txt2 name="title" placeholder="Write your message:" maxlength = "200" data-aos="fade-left"></textarea>
       <br/>
-      <button data-aos="fade-down">Submit</button>
+      <button data-aos="fade-down" onclick="openNav2()">Submit</button>
     </form>
     <br>
     <ul id="task-list"></ul>

@@ -4,7 +4,9 @@ $("#my-form").submit(function (e) {
     url: "/form-handler",
     type: "post",
     data: $("#my-form").serialize(),
-  });
+  }).done(function(){
+    document.getElementById("txt").value = "";
+}) 
 });
 
 $("#my-form2").submit(function (e) {
@@ -14,6 +16,7 @@ $("#my-form2").submit(function (e) {
     type: "post",
     data: $("#my-form2").serialize(),
   }).done(function () {
+    document.getElementById("txt2").value = "";
     loadLast();
   });
 });
