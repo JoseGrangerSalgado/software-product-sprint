@@ -157,6 +157,6 @@ function loadLast() {
     .then((tasks) => {
       const taskListElement = document.getElementById("task-list");
       const ltask = tasks[Object.keys(tasks).shift()];
-      taskListElement.appendChild(createTaskElement(ltask));
+      taskListElement.prepend(createTaskElement(ltask));
     });
 }
