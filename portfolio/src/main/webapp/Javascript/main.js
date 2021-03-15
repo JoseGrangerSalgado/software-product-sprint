@@ -4,6 +4,20 @@ $("#my-form").submit(function (e) {
     url: "/form-handler",
     type: "post",
     data: $("#my-form").serialize(),
+  }).done(function(){
+    document.getElementById("txt").value = "";
+}) 
+});
+
+$("#my-form2").submit(function (e) {
+  e.preventDefault();
+  $.ajax({
+    url: "/new-task",
+    type: "post",
+    data: $("#my-form2").serialize(),
+  }).done(function () {
+    document.getElementById("txt2").value = "";
+    loadLast();
   });
 });
 
@@ -135,4 +149,14 @@ function createTaskElement(task) {
 
   taskElement.appendChild(titleElement);
   return taskElement;
+}
+
+function loadLast() {
+  fetch("/list-tasks")
+    .then((response) => response.json())
+    .then((tasks) => {
+      const taskListElement = document.getElementById("task-list");
+      const ltask = tasks[Object.keys(tasks).shift()];
+      taskListElement.prepend(createTaskElement(ltask));
+    });
 }
